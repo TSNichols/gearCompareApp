@@ -1,0 +1,57 @@
+<aside class="col-lg-2 offcanvas-lg offcanvas-start" tabindex="-1" id="filterSidebar">
+    <div class="offcanvas-header">
+        <h5></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#filterSidebar"></button>
+    </div>
+
+    <div class="offcanvas-body">
+        <nav class="w-100">
+            <ul class="list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2">
+                <strong class="d-flex w-100 align-items-center justify-content-center fw-semibold"> Filters </strong>
+
+                <li class="mt-1 mb-3 mx-4 border-top"></li>
+                <li class="py-2">
+                    <strong class="d-flex w-100 align-items-center fw-semibold"> Brand </strong>
+
+                    <ul class="list-unstyled fw-normal pb-2 small" id="brand_set">
+                        <li class="filter-row-all">
+                            <input class="form-check-input filterAll" type="checkbox" data-value-id="0" id="b_filter_all" checked />
+                            <label class="form-check-label" for="b_filter_all">All</label>
+                        </li>
+                        <% for ( let i = 1; i <= dataFilters.b.length; i++ ) { %>
+                            <li class="filter-row-single">
+                                <input class="form-check-input filterItem" type="checkbox" data-value-id="<%= i %>" id="b_filter_<%= i %>" />
+                                <label class="form-check-label" for="b_filter_<%= i %>"><%= dataFilters.b[i-1] %></label>
+                            </li>
+                        <% } %>
+                    </ul>
+                    
+                </li>
+
+                <li class="mt-1 mb-3 mx-4 border-top"></li>
+                <li class="py-2">
+                    <strong class="d-flex w-100 align-items-center fw-semibold"> Diameter </strong>
+
+                    <ul class="list-unstyled fw-normal pb-2 small">
+                        <input type="text" id="filter_dia_val" readonly style="border:0; color:#334eeb; font-weight:bold;">
+                        <div id="slider-diameter"></div>
+                    </ul>
+
+                </li>
+
+                <li class="mt-1 mb-3 mx-4 border-top"></li>
+                <li class="py-2">
+                    <strong class="d-flex w-100 align-items-center fw-semibold"> Length </strong>
+
+                    <ul class="list-unstyled fw-normal pb-2 small">
+                        <input type="text" id="filter_len_val" readonly style="border:0; color:#334eeb; font-weight:bold;">
+                        <div id="slider-length"></div>
+                    </ul>
+                </li>
+
+
+                
+            </ul>
+        </nav>
+    </div>
+</aside>
